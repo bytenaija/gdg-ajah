@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gdg-kube2
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      run: gdg-kube2
+  template:
+    metadata:
+      labels:
+        run: gdg-kube2
+    spec:
+      containers:
+      - name: gdg-kube
+        image: gcr.io/gdg-kube/gke:latest
